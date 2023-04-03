@@ -20,7 +20,7 @@ app.post("/upload", upload.single("file"), async (req, resp) => {
     console.log(file);
     return resp
       .status(200)
-      .json({ path: `http://localhost:5000/file/${file._id}` });
+      .json({ path: `http://localhost:${Port}/file/${file._id}` });
   } catch (error) {
     console.log(error);
     return resp.status(500).json({ error: error });
